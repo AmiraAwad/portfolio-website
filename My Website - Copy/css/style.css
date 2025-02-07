@@ -1,0 +1,263 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    width: 100%;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Section Styles */
+section {
+    padding: 50px;
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-out;
+    margin-bottom: 20px; /* Added space between sections */
+    border: 3px solid transparent; /* Default border */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Add border and shadow on hover */
+section:hover {
+    border: 3px solid #3498db; /* Blue border on hover */
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.4); /* Subtle glow effect */
+    transform: translateY(-5px); /* Slight movement up */
+}
+
+/* Headings Styles */
+h2 {
+    color: #2c3e50;
+}
+
+/* Project Section Styles */
+.project {
+    background: #ecf0f1;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-out;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Link Styles for Email and LinkedIn */
+a {
+    color: #333; /* Default color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect for Links */
+a:hover {
+    color: #3498db; /* Same color as the border on hover */
+}
+
+.p_title{
+    font-weight: bold;
+    font-size: 25px;
+}
+/* CSS for section visibility animation */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* When the section is visible in the viewport */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.project {
+    position: relative;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: #ecf0f1;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* تأثير before و after */
+.project::before,
+.project::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #3498db;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+.project::before {
+    top: 0;
+    transform-origin: left;
+}
+
+.project::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+/* التفاعل مع hover */
+.project:hover::before,
+.project:hover::after {
+    transform: scaleX(1);
+}
+/* تحسين شكل الأقسام */
+section {
+    position: relative;
+    padding: 50px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+/* تأثير قبل وبعد */
+section::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(52, 152, 219, 0.3), transparent);
+    transition: top 0.4s ease-in-out;
+}
+
+/* عند التحويل */
+section:hover::before {
+    top: 0;
+}
+
+/* عند الخروج يعود للأعلى */
+section:not(:hover)::before {
+    top: -100%;
+}
+
+/* Thank You Section */
+#thankyou {
+    background: #3498db; /* Light Blue */
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* تأثير التحويل */
+#thankyou:hover {
+    background: #2980b9; /* Darker Blue */
+    transform: translateY(-5px); /* حركة خفيفة عند التحويل */
+}
+
